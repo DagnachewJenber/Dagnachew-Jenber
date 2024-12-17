@@ -22,23 +22,41 @@ body {
 
 .nav-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly; /* Space out links evenly */
+    flex-wrap: wrap; /* Allow links to wrap if needed */
     background: #333;
     padding: 10px 0;
+    margin: 0; /* Ensure no unwanted margins */
+    box-sizing: border-box; /* Include padding in element width */
 }
 
 .nav-bar a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 5px 10px; /* Add spacing between links */
     padding: 10px;
     transition: background 0.3s;
+    display: block; /* Ensures proper clickable area */
+    text-align: center;
 }
 
 .nav-bar a:hover {
     background: #0073e6;
     border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+    .nav-bar {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center links horizontally */
+    }
+
+    .nav-bar a {
+        width: 100%; /* Make links take full width for easy clicking */
+        margin: 5px 0; /* Add vertical spacing */
+    }
+}
+
 
 .section {
     padding: 20px;
